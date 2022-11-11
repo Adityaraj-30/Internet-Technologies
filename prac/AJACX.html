@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+    <button>Display</button>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.1.js">
+</script>
+<script>
+    let xhr = new XMLHttpRequest();
+    xhr.open("get","/data.json",true);
+    xhr.send();
+    xhr.onload = ()=>{
+        $("button").click(()=>{
+            let obj = JSON.parse(xhr.responseText);
+            let name="";
+            for(const key in obj)
+            {
+                name += obj[key]+" ";
+            }
+            $("div").text("My name is "+name);
+        })
+    }
+</script>
+</html>

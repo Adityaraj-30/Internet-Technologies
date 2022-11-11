@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>Set Interval</title>
+	<script type="text/javascript">
+		
+		function table(){
+			for(let i=2;i<=10;i++){
+				setInterval( function(){ 
+				for(let j=1;j<=10;j++){
+					document.write(i,"*",j,"=",i*j,"<br>");
+				}
+				document.write("<br>");
+			}
+			,2000)
+			}
+	    }
+
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		table();
+	</script>
+</body>
+</html>

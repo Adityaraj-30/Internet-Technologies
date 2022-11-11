@@ -1,0 +1,59 @@
+<!-- Create a form that takes data about a pet. The form must be well designed and should accept
+the , and what it likes most. At the submission of this form create
+a Pet object in JavaScript filled with these values and log that object and equivalent JSON on
+the console -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Details</title>
+  </head>
+
+  <body>
+    <div>
+      <h1 style="text-align: center">Pet Information</h1>
+      <form style="margin-left: 40%" onsubmit="return fetchdetails()">
+        <label style="text-align: left">NAME</label>
+        <input type="TEXT" class="PD" id="name" />
+        <br />
+        <label style="text-align: left">AGE</label>
+        <input type="NUMBER" class="PD" id="age" />
+        <br />
+        <label style="text-align: left">WEIGHT</label>
+        <input type="NUMBER" class="PD" id="weight" />
+        <br />
+        <label style="text-align: left">TYPE</label>
+        <select id="pet_type" class="PD">
+          <option value=""></option>
+          <option value="DOG">DOG</option>
+          <option value="CAT">CAT</option>
+          <option value="HAMSTER">HAMSTER</option>
+          <option value="Mouse">Mouse</option>
+        </select>
+        <br />
+        Male:<input type="radio" name="gender" class="PD" value="male" id="male"/>
+        Female:<input type="radio" name="gender" class="PD" value="female" id="female"/>
+        <br />
+        <label style="text-align: left">FAVOURITE TASK</label>
+        <textarea id="favorite_task" class="PD"></textarea>
+        <br />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <script>
+      function fetchdetails() {
+        let details = document.getElementsByClassName("PD");
+        const PET = {};
+        for (let i = 0; i < details.length; i++) {
+          if (details[i].name === "gender") {
+            if (details[i].checked) PET[details[i].name] = details[i].value;
+          } else PET[details[i].id] = details[i].value;
+        }
+        console.log(JSON.stringify(PET));
+        return false;
+      }
+    </script>
+  </body>
+</html>

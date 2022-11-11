@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Details</title>
+</head>
+
+<body>
+    <DIV style="text-align: center;">
+        <h1>Pet Information</h1>
+        <form onsubmit="return fetchdetails()">
+            <label style="text-align: left;">NAME</label>
+            <input TYPE="TEXT" id="name">
+            <br>
+            <LABEL style="text-align: left;">AGE</LABEL>
+            <input TYPE="NUMBER" id="age">
+            <br>
+            <label style="text-align: left;">WEIGHT</label>
+            <input TYPE="NUMBER" id="weight">
+            <br>
+            <label style="text-align: left;">TYPE</label>
+            <select id="pets">
+                <option value=""></option>
+                <option value="DOG">DOG</option>
+                <option value="CAT">CAT</option>
+                <option value="HAMSTER">HAMSTER</option>
+                <option value="Mouse">Mouse</option>
+            </select>
+            <br>
+            Male:<input type="radio" name="gender" value="male" id="male" >
+            Female:<input type="radio" name="gender" value="female" id="female">
+            <br>
+            <label style="text-align: left;">FAVOURITE TASK</label>
+            <textarea id="ta"></textarea>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </DIV>
+    <script>
+        function fetchdetails(){
+            let Name1 = document.getElementById("name").value;
+            let Age1 = document.getElementById("age").value;
+            let Weight1 = document.getElementById("weight").value;
+            let Type1 = document.getElementById("pets").value;
+            let Gen1 = document.getElementById("male");
+            let Gen2 = document.getElementById("female");
+            let Gen;
+            if(Gen1.checked)
+            Gen=Gen1.value;
+            if(Gen2.checked)
+            Gen=Gen2.value;
+            let Ft1 = document.getElementById("ta").value;
+            let s = {name:Name1,age:Age1,weight:Weight1,pet_type:Type1,gender:Gen ,favorite_task:Ft1};
+            console.log(s);     
+            return false;       
+        }
+      
+    </script>
+</body>
+
+</html>

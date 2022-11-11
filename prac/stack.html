@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title>stack</title>
+</head>
+
+<body>
+    
+        <label> Enter value to be added to stack:</label><br>
+        <input id="box" type="text"><br>
+
+        <textarea id="area"></textarea><br>
+        <BUTTON onclick="push1()">PUSH</BUTTON>
+        <BUTTON onclick="pop1()">POP</BUTTON>
+        <script>
+
+            var data = [];
+            var datainput;
+            function push1() {
+                datainput = document.getElementById("box").value;
+                if(datainput!=""){
+                data.push(datainput+"\n");
+                document.getElementById("area").value = data;
+                document.getElementById("box").value = "";}
+            }
+            function pop1() {
+        
+                alert(data);
+                document.getElementById("area").value = data;
+                document.getElementById("area").value = "";
+                data=[];
+            }
+        </script>
+    
+</body>
+
+</html>

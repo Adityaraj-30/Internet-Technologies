@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Practical 8</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+	<style type="text/css">
+		.info-table{
+			border: 3px solid black;
+			border-collapse: collapse;
+		}
+		.table-row{
+			width: 100%;
+			margin: auto;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<h1 class="heading">Bsc. Hons Computer Science</h1>
+		<table>
+			<tr>
+				<td>Fee</td>
+				<td>24644</td>
+			</tr>
+			<tr>
+				<td>Eligibility Criteria</td>
+				<td>12 Pass</td>
+			</tr>
+			<tr>
+				<td>Subjects and credit scores</td>
+				<td>
+					<table>
+						<tr>
+							<th>Subject</th>
+							<th>Credit score</th>
+						</tr>
+                        <tr>
+							<td>CPP</td>
+							<td>6</td>
+						</tr>
+                        <tr>
+							<td>CSA</td>
+							<td>6</td>
+						</tr>
+                        <tr>
+							<td>AECC</td>
+							<td>6</td>
+						</tr>
+                        <tr>
+							<td>JAVA</td>
+							<td>6</td>
+						</tr>
+                        <tr>
+							<td>DS</td>
+							<td>6</td>
+						</tr>
+                        <tr>
+							<td>OS</td>
+							<td>6</td>
+						</tr>
+                        <tr>
+							<td>DATA STRUCTURE</td>
+							<td>6</td>
+						</tr>
+                        <tr>
+							<td>COMPUTER NETWORK</td>
+							<td>6</td>
+						</tr>
+						<tr>
+							<td>IT</td>
+							<td>6</td>
+						</tr>
+						<tr>
+							<td>Toc</td>
+							<td>6</td>
+						</tr>
+						<tr>
+							<td>DAV</td>
+							<td>4</td>
+						</tr>
+						<tr>
+							<td>DIP/Micro</td>
+							<td>4</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>Future Opportunities</td>
+				<td>
+					<ul>
+						<li>Database Engineer</li>
+						<li>Web Developer</li>
+						<li>Data Scientist</li>
+					</ul>
+				</td>
+			</tr>
+		</table>		
+	</div>
+
+	<button class="btn btn-outline-dark" id="btn-style">
+		Style Page
+	</button>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+      	$('#btn-style').click(function(){
+      		$("div").addClass('container text-center bg-light border border-dark p-4');
+      		$("table").addClass('container border border-dark');
+      		$("tr").addClass('table-row');
+      		$("td").addClass('border border-dark');
+      		$(".heading").css({
+      			"textAlign":'center'
+      		});
+            $("#btn-style").css("display","none");
+      	});
+
+      });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>Tables</title>
+	<script type="text/javascript">
+		var text = "";
+		var T;
+		var i = 2;
+		var y = 2;
+		var z = 1;
+			setInterval(function my(){
+				var randomColor = Math.floor(Math.random()*16777215).toString(16);
+				if(i <= 10){
+					for(T = 1; T <= 10; T++){
+						text += i + "*" + T + "=" + i*T + "<br>";
+					}
+					y = y + 2;
+					document.write(text.fontsize(y).fontcolor("#" + randomColor));
+					i++;
+					text = "";
+					text += "<br>";
+				}
+			},5000)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

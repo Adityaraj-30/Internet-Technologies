@@ -1,0 +1,37 @@
+<!-- Create an HTML page with the sole purpose to show multiplication tables of 2 to 10 (row-wise)
+created by JavaScript. Initially, the page is blank. With help of setInterval function print a row
+every 5 seconds in different colors and increasing font size. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<body>
+        
+    </div>
+    <script>
+        let number = 2;
+        let font = 10;
+        function printTable(num,font,R,G,B) {
+            for(let i=1;i<=10;i++)
+            {
+                document.write( `<p style="font-size:`+font+`px;color:rgb(`+R+`,`+G+`,`+B+`);">`+num+` * `+i+` = `+(num*i)+`</p>`);
+            }
+        }
+        let times = setInterval(()=>{
+            let temp = Math.floor(Math.random()*255);
+            let temp2 = Math.floor(Math.random()*255);
+            let temp3 = Math.floor(Math.random()*255);
+            font+=5;
+            printTable(number,font,temp,temp2,temp3);
+            number++;
+            if(number===11)
+                clearInterval(times);
+        },5000);
+    </script>
+</body>
+</html>

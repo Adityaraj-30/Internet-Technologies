@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./Koala.jpg" width="200" height="200" id="imageTag" style="position: absolute;left: 0;top: 0;">    
+    <input type="button" value="Move" style="position:relative;margin-top: 250px;margin-right: 50px;" onclick="startMove()">
+    <input type="button" value="Stop" onclick="stopMove()">
+    <script>
+        let start = null;
+        let image = document.getElementById("imageTag");
+        function startMove(){
+            start = setInterval(()=>{
+            let imageX = parseInt(image.style.left);
+            imageX+=10;
+            image.style.left = imageX+"px";
+        },300);
+        }
+        function stopMove(){
+            if(start!=null)
+            clearInterval(start);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+<head>
+	<title>Magic Keys</title>
+</head>
+<body>
+	<p id="p">My name is Anushka Gupta.</p>
+	<div>
+		<button onclick="red()">Red</button>
+		<button onclick="green()">Green</button>
+		<button onclick="blue()">Blue</button>
+	</div><br>
+	<div>
+		<button onclick="size()">10</button>
+		<button onclick="size1()">20</button>
+		<button onclick="size2()">30</button>
+	</div><br>
+	<div>
+		<button onclick="Cursive()">Cursive</button>
+		<button onclick="Serif()">Sans-Serif</button>
+		<button onclick="Fantasy()">Fantasy</button>
+	</div><br>
+
+	<script type="text/javascript">
+		function red(){
+			var myElement = document.getElementById("p");
+			myElement.style.color = "red";
+		}
+		function green(){
+			var myElement = document.getElementById("p");
+			myElement.style.color = "green";
+		}
+		function blue(){
+			var myElement = document.getElementById("p");
+			myElement.style.color = "blue";
+		}
+		function size(){
+			var myElement = document.getElementById("p");
+			myElement.style.fontSize = "10px";
+		}
+		function size1(){
+			var myElement = document.getElementById("p");
+			myElement.style.fontSize = "20px";
+		}
+		function size2(){
+			var myElement = document.getElementById("p");
+			myElement.style.fontSize = "30px";
+		}
+		function Cursive(){
+			var myElement = document.getElementById("p");
+			myElement.style.fontFamily = "Cursive";
+		}
+		function Serif(){
+			var myElement = document.getElementById("p");
+			myElement.style.fontFamily = "sans-serif";
+		}
+		function Fantasy(){
+			var myElement = document.getElementById("p");
+			myElement.style.fontFamily = "Fantasy";
+		}
+		
+	</script>
+</body>
+</html>

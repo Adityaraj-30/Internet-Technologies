@@ -1,0 +1,69 @@
+<!-- Store JSON data of few pets that you created in previous practical in a JSON file (copy from
+console output of previous program to a .json file). Using AJAX, load data from the file and
+display it in a presentable way using HTML and CSS. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <table style="border: 1px solid black;">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Weight</th>
+                <th>Pet Type</th>
+                <th>Gender</th>
+                <th>Favorite Task</th>
+            </tr>
+        </table>
+    </div>
+    <button>Display</button>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.1.js">
+</script>
+<script>
+    let xhr = new XMLHttpRequest();
+    xhr.open("get", "/data.json", true);
+    xhr.send();
+    xhr.onload = () => {
+        $("button").click(() => {
+            let obj = JSON.parse(xhr.responseText);
+            let name = "";
+            for (const [key, value] of Object.entries(obj)) {
+                let name = document.createElement("td");
+                let age = document.createElement("td");
+                let weight = document.createElement("td");
+                let pet_type = document.createElement("td");
+                let gender = document.createElement("td");
+                let fav = document.createElement("td");
+
+                name.append(value["name"]);
+                age.append(value["age"]);
+                weight.append(value["weight"]);
+                pet_type.append(value["pet_type"]);
+                gender.append(value["gender"]);
+                fav.append(value["favorite_task"]);
+                let tr = document.createElement("tr");
+                tr.appendChild(name);
+                tr.appendChild(age);
+                tr.appendChild(weight);
+                tr.appendChild(pet_type);
+                tr.appendChild(gender);
+                tr.appendChild(fav);
+                $("table").append(tr);
+            }
+
+        })
+    }
+</script>
+
+</html>

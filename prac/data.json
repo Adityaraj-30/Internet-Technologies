@@ -1,0 +1,34 @@
+{
+  "Pet1": {
+    "name": "Tom",
+    "age": "9",
+    "weight": "22",
+    "pet_type": "CAT",
+    "gender": "male",
+    "favorite_task": "HueHue"
+  },
+  "Pet2": {
+    "name": "Jerry",
+    "age": "2",
+    "weight": "10",
+    "pet_type": "Mouse",
+    "gender": "female",
+    "favorite_task": "Eat Cheese"
+  },
+  "Pet3": {
+    "name": "Bob",
+    "age": "5",
+    "weight": "30",
+    "pet_type": "DOG",
+    "gender": "male",
+    "favorite_task": "Chase Cat"
+  },
+  "Pet4": {
+    "name": "Oggy",
+    "age": "3",
+    "weight": "20",
+    "pet_type": "CAT",
+    "gender": "male",
+    "favorite_task": "Watching TV"
+  }
+}
