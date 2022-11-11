@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <form action="/signup" method="post">
+        Name: <input type="text" id="name" placeholder="Full Name" required><br>
+        Email: <input type="email" id="email" placeholder="someone@abc.com" required><br>
+        Password: <input type="password" id="pwd" placeholder="Password" required><br>
+        Confirm Password: <input type="password" id="cpwd" placeholder="Password" required><br>
+        <input type="submit" value="Sign Up">
+    </form>
+    <script>
+        $("form").on("submit", (event) => {
+            event.preventDefault();
+            if ($("#pwd").val() !== $("#cpwd").val()) {
+                alert("Passwords don't match");
+                return;
+            }
+            else {
+                let obj = { name: $("#name").val(), email: $("#email").val(), pwd: $("#pwd").val(), cpwd: $("#cpwd").val() }
+                $.ajax({
+                    url: "/signup",
+                    method: "post",
+                    data: obj,
+                    success: function (data, textStatus, xhr) {
+                        if (xhr.status === 250)
+                            alert(data);
+                        else
+                            alert("Register successful");
+                    },
+                    error: function () {
+                        alert("Register Failed");
+                    }
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>
