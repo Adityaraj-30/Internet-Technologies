@@ -1,0 +1,35 @@
+<!-- WAP to implement stack in JavaScript and use inbuilt push and pop operations -->
+<html>
+
+<head>
+    <title>stack</title>
+</head>
+
+<body>
+
+    <label> Enter value to be added to stack:</label><br>
+    <input id="text" type="text"><br>
+
+    <textarea id="areabox" readonly></textarea><br>
+    <button onclick="push1()">PUSH</button>
+    <button onclick="pop1()">POP</BUTTON>
+    <script>
+        let data = [];
+        function push1() {
+            let input = document.getElementById("text").value;
+            if (input != "") {
+                data.push(input);
+                document.getElementById("areabox").value = data;
+                document.getElementById("text").value = "";
+            }
+        }
+        function pop1() {
+                alert("Popped Element:- "+ data[data.length - 1]);
+                data.pop();
+                document.getElementById("areabox").value = data;
+        }
+    </script>
+
+</body>
+
+</html>

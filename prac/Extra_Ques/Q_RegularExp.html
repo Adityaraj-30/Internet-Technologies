@@ -1,0 +1,26 @@
+<!-- WAP to check if input string is number,character or symbol -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="text" id="text" onkeyup="testChar(this)">
+    <script>
+        function testChar(param){
+            let numExp = /^[0-9]/;
+            let charExp = /^[a-zA-Z]/;
+            if(numExp.test(param.value))
+                alert("It is a number");
+            else if(charExp.test(param.value))
+                alert("It is a character");
+            else
+                alert("It is a symbol");
+            param.value = "";
+        }
+    </script>
+</body>
+</html>

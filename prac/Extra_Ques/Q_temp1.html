@@ -1,0 +1,28 @@
+<!-- WAP to move an image horizontally on pressing start button and reset its position when it reaches 
+end of screen. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../nodejs.png" width="200" height="200" id="imageTag" style="position: absolute;left: 0;top: 0;">    
+    <input type="button" value="Start" style="position:relative;margin-top: 250px;" onclick="startMove()">
+    <script>
+        let start = null;
+        let image = document.getElementById("imageTag");
+        function startMove(){
+            start = setInterval(()=>{
+            let imageX = parseInt(image.style.left);
+            imageX+=10;
+            if((imageX+image.width)>=window.innerWidth)
+                imageX = 0;
+            image.style.left = imageX+"px";
+        },100);
+        }
+    </script>
+</body>
+</html>
